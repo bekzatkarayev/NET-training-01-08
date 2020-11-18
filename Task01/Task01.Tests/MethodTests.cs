@@ -23,29 +23,16 @@ namespace Task01.Tests
         [TestCase(0.004241979, 9, 0.00000001, ExpectedResult = 0.545)]
         public double FindNthRoot_SampleInput_ReturnCorrectValue(double number, int degree, double precision)
         {
-            // Arrange
-            double actual;
-
-            // Act
-            actual = Program.FindNthRoot(number, degree, precision);
-
-            // Assert
-
-            return actual;
+            return Program.FindNthRoot(number, degree, precision);
         }
 
         [Test]
         [TestCase(-0.01, 2, 0.0001)]
         [TestCase(0.001, -2, 0.0001)]
         [TestCase(0.01, 2, -1)]
-        public void FindNthRoot_Number_Degree_Precision_ArgumentOutOfRangeException(double number, int degree, double precision)
+        public void FindNthRoot_SampleInput_ThrowsArgumentOutOfRangeException(double number, int degree, double precision)
         {
-            // Arrange
-
-            // Act
-
-            // Assert
-            Assert.Throws<Exception>(() => Program.FindNthRoot(number, degree, precision));
+            Assert.Throws<ArgumentOutOfRangeException>(() => Program.FindNthRoot(number, degree, precision));
         }
     }
 }
